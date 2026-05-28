@@ -4,30 +4,30 @@
 
 int main(){
     // Carta 1:
-    char estado1 = 'S';    // Sigla do Estado
-    char codigo1 [4] = "S01";  // Codigo junt + o nulo
-    char cidade1[50] = "Sao Paulo";   // "[]" Para permitir mais letras
+    char estado1;    // Sigla do Estado
+    char codigo1 [4];  // Codigo junt + o nulo
+    char cidade1[50];   // "[]" Para permitir mais letras
     int populacao1;
-    float area1 = 282559;
+    float area1;
     float PIB1;
-    int pontoturistico1 = 55;
-    float DensidadePopulacional1 = 2498452;
+    int pontoturistico1;
+    float DensidadePopulacional1;
     float PIBperCapita1;
-    float SuperPoder1 = 8435123;
+    float SuperPoder1;  
     int menu;
 
 
     // Carta 2
-    char estado2 = 'R';
-    char codigo2 [4] = "R02";
-    char cidade2[50] = "Rio de Janeiro";
+    char estado2;
+    char codigo2 [4];
+    char cidade2[50];
     int populacao2;
-    float area2 = 452980;
+    float area2;
     float PIB2;    
-    int pontoturistico2 = 60;
-    float DensidadePopulacional2 = 2196548;
+    int pontoturistico2;
+    float DensidadePopulacional2;
     float PIBperCapita2;
-    float SuperPoder2 = 98426355;
+    float SuperPoder2;
 
     // Mensagens que irão aparecer diante do usuário:
 
@@ -150,7 +150,13 @@ int main(){
     }
 
     printf("\n--- Menu ---\n");
-    printf("1. Populacao\n2. Area\n3. PIB\n");
+    printf("1. Populacao\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Ponto turístico\n");
+    printf("5. Densidade Populacional\n");
+    printf("6. PIBperCapita1\n");
+    printf("7. Super Poder\n");    
     printf("Escolha o atributo: ");
     scanf(" %d", &menu);
 
@@ -189,6 +195,51 @@ int main(){
     } else {
         printf("Resultado: Houve um empate!\n");
     }
+        break;
+    case 4: // Caso o jogador escolha o Ponto Turistico
+        printf("Atributo escolhido: Ponto Turistico \n");
+        printf("Carta 1 (%d) vs Carta 2 (%d):\n", pontoturistico1, pontoturistico2);
+    if (pontoturistico1 > pontoturistico2){
+        printf("Resultado: Carta 1 (%s) Venceu!\n", cidade1);
+    } else if (pontoturistico2 > pontoturistico1){
+        printf("Resultado: Carta 2 (%s) Venceu!\n", cidade2);
+    } else {
+        printf("Resultado: Houve um empate!\n");
+    }
+        break;
+    case 5: // Caso o jogador escolha o Densidade Populacional
+        printf("Atributo escolhido: Densidade Populacional \n");
+        printf("Carta 1 (%.2f hab/km²) vs Carta 2 (%.2f hab/km²):\n", DensidadePopulacional1, DensidadePopulacional2);
+    if (DensidadePopulacional1 > DensidadePopulacional2){
+        printf("Resultado: Carta 1 (%s) Venceu!\n", cidade1);
+    } else if (DensidadePopulacional2 < DensidadePopulacional1){
+        printf("Resultado: Carta 2 (%s) Venceu!\n", cidade2);
+    } else {
+        printf("Resultado: Houve um empate!\n");
+    }
+        break;
+    case 6: // Caso o jogador escolha o PIBperCapita1
+        printf("Atributo escolhido: PIBperCapita1 \n");
+        printf("Carta 1 (%.2f R$) vs Carta 2 (%.2f R$):\n", PIBperCapita1, PIBperCapita2);
+    if (PIBperCapita1 > PIBperCapita2){
+        printf("Resultado: Carta 1 (%s) Venceu!\n", cidade1);
+    } else if (PIBperCapita2 > PIBperCapita1){
+        printf("Resultado: Carta 2 (%s) Venceu!\n", cidade2);
+    } else {
+        printf("Resultado: Houve um empate!\n");
+    }
+        break;
+   case 7: // Caso o jogador escolha o Super Poder
+        printf("Atributo escolhido: Super Poder \n");
+        printf("Carta 1 (%.2f Pontos) vs Carta 2 (%.2f Pontos):\n", SuperPoder1, SuperPoder2);
+    if (SuperPoder1 > SuperPoder2){
+        printf("Resultado: Carta 1 (%s) Venceu!\n", cidade1);
+    } else if (SuperPoder2 > SuperPoder1){
+        printf("Resultado: Carta 2 (%s) Venceu!\n", cidade2);
+    } else {
+        printf("Resultado: Houve um empate!\n");
+    }
+        break;
     default:
         printf("Opção inválida\n");
         break;
