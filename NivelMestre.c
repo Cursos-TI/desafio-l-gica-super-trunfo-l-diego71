@@ -116,7 +116,6 @@ int main(){
                 valor1_carta2 = PIB2;
                 controleLoop = 1; break;
             case 'D': case 'd':
-                // Exceção: Como menor densidade vence, guardamos invertido para a soma fazer sentido
                 valor1_carta1 = DensidadePopulacional2; 
                 valor1_carta2 = DensidadePopulacional1; 
                 controleLoop = 1; break;
@@ -126,21 +125,17 @@ int main(){
         }
     }
 
-    controleLoop = 0; // Reseta para o segundo menu
-
-
-    // MENU 2: MENU DINÂMICO (Esconde o primeiro)
-    while (controleLoop == 0) {
+ {
         printf("\nSelecione o SEGUNDO Item (Diferente do primeiro):\n");
         
-        // Só exibe na tela o que NÃO foi escolhido no menu 1
-        if (primeiroAtributo != 'P' && primeiroAtributo != 'p')
+
+        (primeiroAtributo != 'P' && primeiroAtributo != 'p');
          printf("P. Populacao\n");
-        if (primeiroAtributo != 'A' && primeiroAtributo != 'a') 
+        (primeiroAtributo != 'A' && primeiroAtributo != 'a');
         printf("A. Area\n");
-        if (primeiroAtributo != 'I' && primeiroAtributo != 'i')
+        (primeiroAtributo != 'I' && primeiroAtributo != 'i');
          printf("I. PIB\n");
-        if (primeiroAtributo != 'D' && primeiroAtributo != 'd')
+        (primeiroAtributo != 'D' && primeiroAtributo != 'd');
          printf("D. Densidade Demografica\n");
         
         printf("Selecione: ");
@@ -167,7 +162,6 @@ int main(){
              break;
             case 'D': 
             case 'd':
-                // Exceção da densidade replicada 
                 valor2_carta1 = DensidadePopulacional2;
                 valor2_carta2 = DensidadePopulacional1;
                 controleLoop = 1;
@@ -192,7 +186,6 @@ int main(){
     printf("  Soma dos Itens Escolhidos: %.2f\n", somaCarta2);
     printf("-----------------------------------------\n");
 
-    // Condicional de vitória por soma e tratamento de empates
     if (somaCarta1 > somaCarta2) {
         printf("Vencedor: Carta 1 (%s)!\n", cidade1);
     } else if (somaCarta2 > somaCarta1) {
